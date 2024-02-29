@@ -1,5 +1,5 @@
 function precioNeto(cantidad, precio) {
-    return 6;
+    return cantidad*precio;
 }
 
 export default precioNeto;
