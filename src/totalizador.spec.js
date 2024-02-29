@@ -13,4 +13,16 @@ describe("Totalizador", () => {
   it("deberia mostrar el precio neto de 5 items a un precio de 2 debria mostrar 10", () => {
     expect(mostrarPrecioNeto(5, 2)).toEqual("El precio neto es: 10");
   });
+
+  it("Mostrar Impuesto y porcentaje de CA", () => {
+    const neto = precioNeto(100, 1);
+    expect(precioTotal(neto, 8.25)).toEqual(108.25);
+  })
 });
+
+function precioTotal(total, impuesto){
+  const totalConImpuesto = total + (total * impuesto / 100);
+  return totalConImpuesto;
+    
+}
+export default precioTotal;
