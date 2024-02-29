@@ -1,4 +1,4 @@
-import precioNeto from "./totalizador.js";
+import {precioNeto,precioTotal} from "./totalizador.js";
 import mostrarPrecioNeto from "./mostrarTotalizador.js";
 
 describe("Totalizador", () => {
@@ -14,15 +14,9 @@ describe("Totalizador", () => {
     expect(mostrarPrecioNeto(5, 2)).toEqual("El precio neto es: 10");
   });
 
-  it("Mostrar Impuesto y porcentaje de CA", () => {
+  it("se muestra Impuesto y porcentaje de CA", () => {
     const neto = precioNeto(100, 1);
     expect(precioTotal(neto, 8.25)).toEqual(108.25);
   })
+  
 });
-
-function precioTotal(total, impuesto){
-  const totalConImpuesto = total + (total * impuesto / 100);
-  return totalConImpuesto;
-    
-}
-export default precioTotal;

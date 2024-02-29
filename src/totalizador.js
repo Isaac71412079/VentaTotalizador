@@ -2,4 +2,10 @@ function precioNeto(cantidad, precio) {
     return cantidad*precio;
 }
 
-export default precioNeto;
+function precioTotal(total, impuesto){
+    const totalConImpuesto = total + (total * impuesto / 100);
+    return totalConImpuesto;
+      
+  }
+export {precioNeto, precioTotal};
+
