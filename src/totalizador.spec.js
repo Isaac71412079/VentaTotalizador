@@ -63,5 +63,13 @@ describe("Totalizador", () => {
     expect(mostrarImpuesto(neto, "NV")).toEqual("El impuesto de NV es: 32");
   });
 
-  
+  it("Se calcula el precio total de acuerdo a UT, con 200 unidades a un precio de 2", () => {
+    const neto = precioNeto(200, 2);
+    expect(mostrarPrecioTotal(neto, impuestoEstado("UT"))).toEqual("El precio total es: 426.6");
+  });
+
+  it("Se muestra cuanto es el impuesto segun que estado (UT) deberia mostrar 26.6", () => {
+    const neto = precioNeto(200, 2);
+    expect(mostrarImpuesto(neto, "UT")).toEqual("El impuesto de UT es: 26.6");
+  });
 });
