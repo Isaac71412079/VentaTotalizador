@@ -10,7 +10,6 @@ function impuestoEstado(estado){
 }
 
 function precioTotal(total, impuesto){
-    // impuesto = impuestoEstado(estado);
     const totalConImpuesto = total + (total * impuesto / 100);
     return totalConImpuesto;
       
