@@ -6,7 +6,10 @@ function impuestoEstado(estado){
   if (estado === "CA")
     return 8.25;
   else
-    return 6.25;
+    if (estado === "TX")
+      return 6.25;
+    else
+      return 4;
 }
 
 function precioTotal(total, impuesto){
