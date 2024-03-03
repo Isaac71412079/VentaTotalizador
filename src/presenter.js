@@ -1,4 +1,5 @@
-import mostrarPrecioNeto from "./mostrarTotalizador.js";
+import {mostrarPrecioNeto, mostrarPrecioTotal} from "./mostrarTotalizador.js";
+import { precioNeto } from "./totalizador.js";
 
 const cantidad = document.querySelector("#cantidaddeitem");
 const precio = document.querySelector("#precioporitem");
@@ -11,5 +12,8 @@ form.addEventListener("submit", (event) => {
   const cantidaditem = Number.parseInt(cantidad.value);
   const precioitem = Number.parseInt(precio.value);
 
-  div.innerHTML = "<p>" + mostrarPrecioNeto(cantidaditem, precioitem) + "</p>";
+  const precioNeto_str = mostrarPrecioNeto(cantidaditem, precioitem);
+  const precioTotal_str = mostrarPrecioTotal(precioNeto(cantidaditem, precioitem), 8.25);
+
+  div.innerHTML = "<p>" + precioNeto_str + "</p> <p>" + precioTotal_str + "</p>";
 });

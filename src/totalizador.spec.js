@@ -1,5 +1,5 @@
 import {precioNeto,precioTotal} from "./totalizador.js";
-import mostrarPrecioNeto from "./mostrarTotalizador.js";
+import {mostrarPrecioNeto, mostrarPrecioTotal} from "./mostrarTotalizador.js";
 
 describe("Totalizador", () => {
   it("deberia mostrar el precio neto", () => {
@@ -19,4 +19,7 @@ describe("Totalizador", () => {
     expect(precioTotal(neto, 8.25)).toEqual(108.25);
   })
   
+  it("se muestra un mensaje del precio total de 200 unidades a un precio de 2 con un impuesto de 8,25", () => {
+    expect(mostrarPrecioTotal(precioNeto(200, 2), 8.25)).toEqual("El precio total es: 433");
+  });
 });
