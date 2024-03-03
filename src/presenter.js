@@ -17,7 +17,5 @@ form.addEventListener("submit", (event) => {
   const precioNeto_str = mostrarPrecioNeto(cantidaditem, precioitem);
   const precioTotal_str = mostrarPrecioTotal(precioNeto(cantidaditem, precioitem), 8.25);
 
-  console.log(estadoItem);
-
   div.innerHTML = "<p>" + precioNeto_str + "</p> <p>" + mostrarImpuesto(precioNeto(cantidaditem, precioitem), estadoItem) + "</p> <p>" + precioTotal_str + "</p>";
 });
