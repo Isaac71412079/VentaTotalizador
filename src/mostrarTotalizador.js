@@ -8,4 +8,8 @@ function mostrarPrecioTotal(neto, porcentaje) {
     return "El precio total es: " + precioTotal(neto, porcentaje);
 }
 
-export {mostrarPrecioNeto, mostrarPrecioTotal};
+function mostrarImpuesto(neto, estado) {
+    return "El impuesto de " + estado + " es: " + 33;
+}
+
+export {mostrarPrecioNeto, mostrarPrecioTotal, mostrarImpuesto};

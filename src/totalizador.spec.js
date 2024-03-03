@@ -1,5 +1,5 @@
 import {precioNeto, precioTotal, impuestoEstado} from "./totalizador.js";
-import {mostrarPrecioNeto, mostrarPrecioTotal} from "./mostrarTotalizador.js";
+import {mostrarPrecioNeto, mostrarPrecioTotal, mostrarImpuesto} from "./mostrarTotalizador.js";
 
 describe("Totalizador", () => {
   it("deberia mostrar el precio neto", () => {
@@ -26,5 +26,10 @@ describe("Totalizador", () => {
   it("Se calcula el precio total de acuerdo a CA, con 200 unidades a un precio de 2", () => {
     const neto = precioNeto(200, 2);
     expect(mostrarPrecioTotal(neto, impuestoEstado("CA"))).toEqual("El precio total es: 433");
+  });
+
+  it("Se muestra cuanto es el impuesto segun que estado", () => {
+    const neto = precioNeto(200, 2);
+    expect(mostrarImpuesto(neto, "CA")).toEqual("El impuesto de CA es: 33");
   });
 });
