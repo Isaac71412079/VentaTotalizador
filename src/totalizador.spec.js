@@ -89,7 +89,7 @@ describe("Totalizador", () => {
     const descuento = precioNeto(1200, 1);
     expect(mostrarDescuento(descuento, impuestoEstado("CA"))).toEqual("El descuento(3%): 37.89"); 
   });
-  
+
   //--
   it("Se muestra el precio total mas el impuesto y el descuento de > 3000", () => {
     const totalConDescuento = precioTotal(3000, impuestoEstado("CA"));
@@ -101,5 +101,9 @@ describe("Totalizador", () => {
     expect(descuento).toEqual(150); 
   });
 
+  it("Se muestra el mensaje correctamente sobre cuanto es el descuento para un total mayor a 3000", () => {
+    const descuento = precioNeto(3000, 1);
+    expect(mostrarDescuento(descuento, impuestoEstado("CA"))).toEqual("El descuento(5%): 154.875"); 
+  });
  
 });
