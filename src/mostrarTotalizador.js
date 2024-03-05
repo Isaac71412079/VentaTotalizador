@@ -17,10 +17,7 @@ function mostrarImpuesto(neto, estado) {
 
 function mostrarDescuento(neto, porcentaje) {
     const total = precioTotal(neto, porcentaje);
-    let descuento = 0;
-    if ((total >= 1000) && (total < 3000)) {
-        descuento = 0.03 * total;
-    }
+    const descuento = calcularDescuento(total);
     return "El descuento(" + (descuento / total * 100) + "%): " + descuento;
 }
 
