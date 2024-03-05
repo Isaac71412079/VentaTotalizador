@@ -96,4 +96,9 @@ describe("Totalizador", () => {
     expect(totalConDescuento).toEqual(3097.5);
   });
 
+  it("Calcula correctamente el descuento para un total mayor a 3000", () => {
+    const descuento = calcularDescuento(3000);
+    expect(descuento).toEqual(150); 
+  });
+
 });
