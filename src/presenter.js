@@ -1,5 +1,5 @@
-import {mostrarPrecioNeto, mostrarPrecioTotal, mostrarImpuesto} from "./mostrarTotalizador.js";
-import { impuestoEstado, precioNeto } from "./totalizador.js";
+import {mostrarPrecioNeto, mostrarPrecioTotal, mostrarImpuesto, mostrarDescuento} from "./mostrarTotalizador.js";
+import { precioNeto, precioTotal, impuestoEstado, calcularDescuento } from "./totalizador.js";
 
 const cantidad = document.querySelector("#cantidaddeitem");
 const precio = document.querySelector("#precioporitem");
@@ -16,6 +16,8 @@ form.addEventListener("submit", (event) => {
 
   const precioNeto_str = mostrarPrecioNeto(cantidaditem, precioitem);
   const precioTotal_str = mostrarPrecioTotal(precioNeto(cantidaditem, precioitem), impuestoEstado(estadoItem));
+  const impuesto_str = mostrarImpuesto(precioNeto(cantidaditem, precioitem), estadoItem);
+  const descuento_str = mostrarDescuento(precioNeto(cantidaditem, precioitem), impuestoEstado(estadoItem));
 
-  div.innerHTML = "<p>" + precioNeto_str + "</p> <p>" + mostrarImpuesto(precioNeto(cantidaditem, precioitem), estadoItem) + "</p> <p>" + precioTotal_str + "</p>";
+  div.innerHTML = "<p>" + precioNeto_str + "</p> <p>" + descuento_str +"</p> <p>" + impuesto_str + "</p> <p>" + precioTotal_str + "</p>";
 });

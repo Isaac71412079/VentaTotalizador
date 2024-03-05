@@ -20,7 +20,7 @@ function impuestoEstado(estado){
 
 function calcularDescuento(total) {
   if ((total>=1000) && (total<3000)) {
-      return total * 0.01; // Descuento del 3%
+      return total * 0.03; 
   }
   return 0;
 }
@@ -28,7 +28,7 @@ function calcularDescuento(total) {
 function precioTotal(total, impuesto) {
   let totalConImpuesto = total + (total * impuesto / 100);
   const descuento = calcularDescuento(total);
-  totalConImpuesto -= descuento; // Restar el descuento al total con impuesto
+  totalConImpuesto -= descuento;
   return totalConImpuesto;
 }
 
