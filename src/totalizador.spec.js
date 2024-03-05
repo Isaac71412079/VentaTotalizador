@@ -1,4 +1,4 @@
-import {precioNeto, precioTotal, impuestoEstado} from "./totalizador.js";
+import {precioNeto, precioTotal, impuestoEstado, calcularDescuento} from "./totalizador.js";
 import {mostrarPrecioNeto, mostrarPrecioTotal, mostrarImpuesto} from "./mostrarTotalizador.js";
 
 describe("Totalizador", () => {
@@ -78,6 +78,12 @@ describe("Totalizador", () => {
   it("Se muestra el precio total mas el impuesto y el descuento de > 1000", () => {
     const totalConDescuento = precioTotal(1000, impuestoEstado("CA"));
     expect(totalConDescuento).toEqual(1072.5);
+  });
+
+  // Prueba para la función calcularDescuento
+  it("Calcula correctamente el descuento para un total mayor a 1000", () => {
+    const descuento = calcularDescuento(1200);
+    expect(descuento).toEqual(12); // Descuento del 3% para 1200
   });
 
 });

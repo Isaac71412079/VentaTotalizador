@@ -4,6 +4,10 @@ function mostrarPrecioNeto(cantidad, precio) {
     const precioN = precioNeto(cantidad, precio);
     return "El precio neto (" + cantidad + "*$"+precio+") es: "+ precioN;
 }
+/*
+function mostrarTotalMasDescuento(neto, porcentaje){
+    return "El descuento(%): " + precioTotal(neto, porcentaje);
+}*/
 
 function mostrarPrecioTotal(neto, porcentaje) {
     return "El precio total es: " + precioTotal(neto, porcentaje);
