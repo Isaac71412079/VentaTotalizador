@@ -75,6 +75,7 @@ describe("Totalizador", () => {
   });
 
   //DESCUENTOS
+  //>1000
   it("Se muestra el precio total mas el impuesto y el descuento de > 1000", () => {
     const totalConDescuento = precioTotal(1000, impuestoEstado("CA"));
     expect(totalConDescuento).toEqual(1052.5);
@@ -90,7 +91,7 @@ describe("Totalizador", () => {
     expect(mostrarDescuento(descuento, impuestoEstado("CA"))).toEqual("El descuento(3%): 37.89"); 
   });
 
-  //--
+  //>3000
   it("Se muestra el precio total mas el impuesto y el descuento de > 3000", () => {
     const totalConDescuento = precioTotal(3000, impuestoEstado("CA"));
     expect(totalConDescuento).toEqual(3097.5);
@@ -105,5 +106,10 @@ describe("Totalizador", () => {
     const descuento = precioNeto(3000, 1);
     expect(mostrarDescuento(descuento, impuestoEstado("CA"))).toEqual("El descuento(5%): 154.875"); 
   });
- 
+
+  //>7000
+  it("Se muestra el precio total mas el impuesto y el descuento de > 7000 del estado de NV", () => {
+    const totalConDescuento = precioTotal(7100, impuestoEstado("NV"));
+    expect(totalConDescuento).toEqual(7171);
+  });
 });
