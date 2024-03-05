@@ -22,6 +22,11 @@ function calcularDescuento(total) {
   if ((total>=1000) && (total<3000)) {
       return total * 0.03; 
   }
+  else{
+    if ((total>=3000) && (total<7000)) {
+      return total * 0.05; 
+    }
+  }
   return 0;
 }
 

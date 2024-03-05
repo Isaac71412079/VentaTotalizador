@@ -80,15 +80,20 @@ describe("Totalizador", () => {
     expect(totalConDescuento).toEqual(1052.5);
   });
 
-  // Prueba para la función calcularDescuento
   it("Calcula correctamente el descuento para un total mayor a 1000", () => {
     const descuento = calcularDescuento(1200);
-    expect(descuento).toEqual(36); // Descuento del 3% para 1200
+    expect(descuento).toEqual(36); 
   });
 
   it("Se muestra el mensaje correctamente sobre cuanto es el descuento para un total mayor a 1000", () => {
     const descuento = precioNeto(1200, 1);
     expect(mostrarDescuento(descuento, impuestoEstado("CA"))).toEqual("El descuento(3%): 37.89"); 
+  });
+
+  //--
+  it("Se muestra el precio total mas el impuesto y el descuento de > 3000", () => {
+    const totalConDescuento = precioTotal(3000, impuestoEstado("CA"));
+    expect(totalConDescuento).toEqual(3097.5);
   });
 
 });
