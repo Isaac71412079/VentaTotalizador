@@ -112,4 +112,9 @@ describe("Totalizador", () => {
     const totalConDescuento = precioTotal(7100, impuestoEstado("NV"));
     expect(totalConDescuento).toEqual(7171);
   });
+
+  it("Calcula correctamente el descuento para un total mayor a 7000", () => {
+    const descuento = calcularDescuento(7450);
+    expect(descuento).toEqual(521.5); 
+  });
 });
